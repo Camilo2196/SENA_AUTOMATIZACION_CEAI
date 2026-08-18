@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servosistemas y Automatización de Plantas - CEAI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <svg viewBox="0 0 24 24" class="logo-icon">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>CEAI Mecatrónica</span>
+                </div>
+                <div class="sublogo">Servosistemas & Automatización</div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <button class="nav-btn active" data-target="dashboard-section">
+                    <svg viewBox="0 0 24 24" class="nav-icon"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+                    <span>Inicio</span>
+                </button>
+                <button class="nav-btn" data-target="plc-section">
+                    <svg viewBox="0 0 24 24" class="nav-icon"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                    <span>PLC Siemens S7-1500</span>
+                </button>
+                <button class="nav-btn" data-target="gemma-section">
+                    <svg viewBox="0 0 24 24" class="nav-icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                    <span>GEMMA / GRAFCET</span>
+                </button>
+                <button class="nav-btn" data-target="simulators-section">
+                    <svg viewBox="0 0 24 24" class="nav-icon"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-4 6h-4v2h4v2h-4v2h4v2H9V7h6v2z"/></svg>
+                    <span>Simuladores de Planta</span>
+                </button>
+                <button class="nav-btn" data-target="quiz-section">
+                    <svg viewBox="0 0 24 24" class="nav-icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                    <span>Evaluación</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>Programa de Formación: <strong>224312</strong></p>
+                <p>Instructor: <strong>William Gutiérrez</strong></p>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header bar -->
+            <header class="top-bar">
+                <h1 id="section-title">Panel de Control Educativo</h1>
+                <div class="status-indicator">
+                    <span class="pulse-dot green"></span>
+                    <span class="status-text">PLC Virtual Conectado</span>
+                </div>
+            </header>
+
+            <!-- Sections -->
+            <!-- 1. DASHBOARD SECTION -->
+            <section id="dashboard-section" class="content-section active">
+                <div class="hero-card">
+                    <div class="hero-info">
+                        <span class="badge">Tecnólogo en Automatización</span>
+                        <h2>Servosistemas y Procesos Unitarios</h2>
+                        <p>Plataforma interactiva diseñada para la apropiación y transferencia de conocimientos en el modelado, programación y puesta en marcha de sistemas secuenciales de control industrial y regulación continua.</p>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-val">4</span>
+                                <span class="stat-lbl">Plantas Didácticas</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-val">48h</span>
+                                <span class="stat-lbl">Duración de la Guía</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-val">144h</span>
+                                <span class="stat-lbl">RAE Implementación</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-visual">
+                        <!-- Technical schematic decoration -->
+                        <svg viewBox="0 0 200 200" class="tech-graphic">
+                            <circle cx="100" cy="100" r="80" stroke="rgba(0,153,153,0.2)" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+                            <circle cx="100" cy="100" r="60" stroke="#009999" stroke-width="3" fill="none" stroke-dasharray="10,5"/>
+                            <polygon points="100,20 120,70 180,70 130,110 150,170 100,130 50,170 70,110 20,70 80,70" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="2"/>
+                            <path d="M100 40 A60 60 0 0 1 160 100" fill="none" stroke="#3B82F6" stroke-width="4" stroke-linecap="round"/>
+                            <circle cx="100" cy="100" r="10" fill="#009999"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <h3 class="grid-title">Estructura del Programa de Aprendizaje</h3>
+                <div class="dashboard-grid">
+                    <div class="glass-card">
+                        <div class="card-icon blue">
+                            <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5.89 12.5L12 15.82l6.11-3.32L12 9.18 5.89 12.5z"/></svg>
+                        </div>
+                        <h4>Competencia General</h4>
+                        <p>Programar equipo de control de acuerdo con el diseño de la automatización industrial.</p>
+                        <ul class="check-list">
+                            <li>Modelado lógico estructurado</li>
+                            <li>Normalización IEC 61131-3</li>
+                            <li>Diagnóstico y puesta a punto</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card">
+                        <div class="card-icon green">
+                            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>
+                        </div>
+                        <h4>Resultados de Aprendizaje (RAE)</h4>
+                        <p>Implementar sistemas de regulación según especificaciones y control combinacional/secuencial con PLC.</p>
+                        <ul class="check-list">
+                            <li>Control secuencial (GRAFCET)</li>
+                            <li>Regulación PID continua</li>
+                            <li>Operación local HMI/SCADA</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-card">
+                        <div class="card-icon yellow">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        </div>
+                        <h4>Entorno de Laboratorio</h4>
+                        <p>Trabajamos integrando el controlador físico Siemens y gemelos digitales con Factory I/O.</p>
+                        <ul class="check-list">
+                            <li>Estaciones MPS-PA didácticas</li>
+                            <li>Redes industriales PROFINET</li>
+                            <li>Simulaciones en tiempo real</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. PLC SECTION -->
+            <section id="plc-section" class="content-section">
+                <div class="section-intro">
+                    <h2>Configuración física del Autómata S7-1500 (CEAI Plantas FACT)</h2>
+                    <p>Haz clic en cada módulo del rack para ver la referencia, descripción, plano y asignación de direcciones del hardware real utilizado en el laboratorio.</p>
+                </div>
+
+                <div class="plc-rack-container">
+                    <div class="plc-rail"></div>
+                    <div class="plc-rack">
+                        <!-- Module 1: CPU -->
+                        <div class="plc-module active" data-module="cpu">
+                            <div class="plc-module-header">SLOT 1</div>
+                            <div class="plc-module-body cpu-body">
+                                <div class="led-panel">
+                                    <div class="led active-led green" id="led-run">RUN</div>
+                                    <div class="led" id="led-error">ERR</div>
+                                    <div class="led" id="led-maint">MAINT</div>
+                                </div>
+                                <div class="plc-brand">SIEMENS</div>
+                                <div class="plc-name">S7-1500</div>
+                                <div class="plc-model">CPU 1516-3</div>
+                            </div>
+                        </div>
+                        <!-- Module 2: DI -->
+                        <div class="plc-module" data-module="di">
+                            <div class="plc-module-header">SLOT 2</div>
+                            <div class="plc-module-body input-body">
+                                <div class="module-label">DI 32</div>
+                                <div class="led-grid">
+                                    <span class="io-led"></span><span class="io-led"></span><span class="io-led"></span><span class="io-led"></span>
+                                    <span class="io-led"></span><span class="io-led"></span><span class="io-led"></span><span class="io-led"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Module 3: DQ -->
+                        <div class="plc-module" data-module="dq">
+                            <div class="plc-module-header">SLOT 3</div>
+                            <div class="plc-module-body output-body">
+                                <div class="module-label">DQ 32</div>
+                                <div class="led-grid">
+                                    <span class="io-led"></span><span class="io-led"></span><span class="io-led"></span><span class="io-led"></span>
+                                    <span class="io-led"></span><span class="io-led"></span><span class="io-led"></span><span class="io-led"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Module 4: AI -->
+                        <div class="plc-module" data-module="ai">
+                            <div class="plc-module-header">SLOT 4</div>
+                            <div class="plc-module-body analog-body">
+                                <div class="module-label">AI 8</div>
+                                <div class="analog-meter"></div>
+                            </div>
+                        </div>
+                        <!-- Module 5: AQ -->
+                        <div class="plc-module" data-module="aq">
+                            <div class="plc-module-header">SLOT 5</div>
+                            <div class="plc-module-body analog-body">
+                                <div class="module-label">AQ 4</div>
+                                <div class="analog-meter"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="plc-detail-card glass-card" id="module-details">
+                    <!-- Loaded dynamically via js -->
+                    <h3>Selecciona un módulo en el rack superior</h3>
+                    <p>Haz clic sobre cualquiera de los módulos para examinar su información de hardware, mapas de entrada/salida y funciones del proceso mecatrónico.</p>
+                </div>
+            </section>
+
+            <!-- 3. GEMMA & GRAFCET SECTION -->
+            <section id="gemma-section" class="content-section">
+                <div class="tabs-container">
+                    <div class="sub-tabs">
+                        <button class="sub-tab-btn active" data-sub="gemma-tab">Guía GEMMA Interactiva</button>
+                        <button class="sub-tab-btn" data-sub="grafcet-tab">Simulador GRAFCET</button>
+                    </div>
+                </div>
+
+                <!-- SUBTAB: GEMMA -->
+                <div id="gemma-tab" class="sub-tab-content active">
+                    <div class="section-intro">
+                        <h2>Estructura de Modos de Operación (Guía GEMMA)</h2>
+                        <p>La guía GEMMA define los estados de parada, funcionamiento y fallo de un sistema automatizado. Haz clic en las zonas clave del diagrama para estudiar su aplicación didáctica.</p>
+                    </div>
+                    
+                    <div class="gemma-grid">
+                        <div class="gemma-diagram">
+                            <div class="gemma-zone zone-a" id="gemma-a">
+                                <h3>Procedimientos de PARADA / ESPERA (Zona A)</h3>
+                                <div class="gemma-states">
+                                    <div class="gemma-state-btn" data-state="A1">A1: Parada en estado inicial</div>
+                                    <div class="gemma-state-btn" data-state="A2">A2: Parada solicitada a fin de ciclo</div>
+                                    <div class="gemma-state-btn" data-state="A6">A6: Puesta en marcha de seguridad</div>
+                                </div>
+                            </div>
+                            <div class="gemma-zone zone-f" id="gemma-f">
+                                <h3>Procedimientos de FUNCIONAMIENTO (Zona F)</h3>
+                                <div class="gemma-states">
+                                    <div class="gemma-state-btn" data-state="F1">F1: Producción normal</div>
+                                    <div class="gemma-state-btn" data-state="F2">F2: Marcha de preparación</div>
+                                    <div class="gemma-state-btn" data-state="F3">F3: Marcha de verificación sin orden</div>
+                                </div>
+                            </div>
+                            <div class="gemma-zone zone-d" id="gemma-d">
+                                <h3>Procedimientos de FALLO (Zona D)</h3>
+                                <div class="gemma-states">
+                                    <div class="gemma-state-btn" data-state="D1">D1: Parada de emergencia</div>
+                                    <div class="gemma-state-btn" data-state="D2">D2: Diagnóstico y tratamiento de fallas</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="gemma-desc-panel glass-card" id="gemma-details">
+                            <h3>Selecciona un estado de la Guía GEMMA</h3>
+                            <p>Haz clic en cualquiera de los botones de estado (A1, F1, D1, etc.) para ver la descripción técnica de funcionamiento, condiciones de transición y ejemplo en el taller de procesos unitarios.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUBTAB: GRAFCET -->
+                <div id="grafcet-tab" class="sub-tab-content">
+                    <div class="section-intro">
+                        <h2>Simulador de Lógica de Transiciones (GRAFCET)</h2>
+                        <p>Simulación visual del ciclo de automatización de un proceso secuencial. Observa cómo cambian las etapas y las acciones asociadas a los sensores físicos.</p>
+                    </div>
+
+                    <div class="grafcet-sim-grid">
+                        <div class="grafcet-visualizer glass-card">
+                            <div class="grafcet-nodes-container">
+                                <!-- Step 0 -->
+                                <div class="grafcet-step active" id="step-0">
+                                    <div class="step-num">0</div>
+                                    <div class="step-label">Reposo (Estado Inicial)</div>
+                                </div>
+                                <div class="grafcet-transition" id="trans-0-1">
+                                    <span class="trans-condition">Condición: Pulsador Marcha & Sensores Iniciales (Nivel Bajo)</span>
+                                </div>
+                                
+                                <!-- Step 1 -->
+                                <div class="grafcet-step" id="step-1">
+                                    <div class="step-num">1</div>
+                                    <div class="step-label">Llenando Tanque</div>
+                                    <div class="step-action">Acción: Activar Bomba (%Q0.0)</div>
+                                </div>
+                                <div class="grafcet-transition" id="trans-1-2">
+                                    <span class="trans-condition">Condición: Sensor Nivel Alto Alcanzado (%I0.1)</span>
+                                </div>
+                                
+                                <!-- Step 2 -->
+                                <div class="grafcet-step" id="step-2">
+                                    <div class="step-num">2</div>
+                                    <div class="step-label">Fase de Mezcla</div>
+                                    <div class="step-action">Acción: Activar Mezclador (%Q0.2) + Temporizador 5s</div>
+                                </div>
+                                <div class="grafcet-transition" id="trans-2-3">
+                                    <span class="trans-condition">Condición: Temporizador Completo (5 Segundos)</span>
+                                </div>
+                                
+                                <!-- Step 3 -->
+                                <div class="grafcet-step" id="step-3">
+                                    <div class="step-num">3</div>
+                                    <div class="step-label">Vaciado del Tanque</div>
+                                    <div class="step-action">Acción: Válvula Descarga (%Q0.3)</div>
+                                </div>
+                                <div class="grafcet-transition" id="trans-3-0">
+                                    <span class="trans-condition">Condición: Sensor Nivel Bajo Activado (%I0.0)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grafcet-controls glass-card">
+                            <h3>Controles de Simulación Secuencial</h3>
+                            <p>Usa los siguientes botones para simular el comportamiento de las entradas físicas en el PLC y observa la activación de las etapas del GRAFCET.</p>
+                            
+                            <div class="control-actions">
+                                <button class="btn btn-primary" id="btn-start-seq">Pulsar botón de Marcha</button>
+                                <button class="btn btn-secondary" id="btn-trigger-high" disabled>Activar Nivel Alto (%I0.1)</button>
+                                <button class="btn btn-secondary" id="btn-timer-done" disabled>Simular Fin Temporizador (5s)</button>
+                                <button class="btn btn-secondary" id="btn-trigger-low" disabled>Activar Nivel Bajo (%I0.0)</button>
+                                <button class="btn btn-danger" id="btn-emergency-stop">PARADA DE EMERGENCIA</button>
+                            </div>
+
+                            <div class="grafcet-log glass-card">
+                                <h4>Historial de Eventos Lógicos</h4>
+                                <div class="log-lines" id="grafcet-log-output">
+                                    <div class="log-line text-muted">Sistema inicializado en Reposo (Paso 0).</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. SIMULATORS SECTION -->
+            <section id="simulators-section" class="content-section">
+                <div class="tabs-container">
+                    <div class="sub-tabs overflow-x">
+                        <button class="sub-tab-btn active" data-sub="llenado-sim">Llenado de Botellas</button>
+                        <button class="sub-tab-btn" data-sub="filtracion-sim">Filtración de Fluidos</button>
+                        <button class="sub-tab-btn" data-sub="reactor-sim">Reactor Térmico</button>
+                        <button class="sub-tab-btn" data-sub="mezcla-sim">Proceso de Mezcla</button>
+                    </div>
+                </div>
+
+                <!-- LLENADO SIMULATOR -->
+                <div id="llenado-sim" class="sub-tab-content active">
+                    <div class="simulator-layout">
+                        <!-- Main Interactive Area -->
+                        <div class="simulator-canvas glass-card">
+                            <div class="canvas-header">
+                                <h3>Estación Llenadora de Refrescos</h3>
+                                <div class="badge green">PLC %Q0.0 - %Q0.2</div>
+                            </div>
+                            
+                            <div class="llenado-animation-area">
+                                <!-- Fluid tank structure -->
+                                <div class="header-tank">
+                                    <div class="tank-label">Tanque Dosificador B102</div>
+                                    <div class="tank-fluid-fill" id="llenado-header-fill" style="height: 70%"></div>
+                                </div>
+                                <!-- Valve connection and liquid nozzle -->
+                                <div class="filling-valve-nozzle">
+                                    <div class="nozzle-body"></div>
+                                    <div class="liquid-stream" id="llenado-stream"></div>
+                                </div>
+                                <!-- Conveyor belt and bottles -->
+                                <div class="conveyor-track">
+                                    <div class="conveyor-belt"></div>
+                                    <div class="conveyor-roller left"></div>
+                                    <div class="conveyor-roller right"></div>
+                                    <!-- Bottle -->
+                                    <div class="sim-bottle" id="active-bottle">
+                                        <div class="bottle-liquid" id="bottle-fluid"></div>
+                                    </div>
+                                </div>
+                                <!-- Bottle sensor -->
+                                <div class="bottle-sensor" id="sensor-optical">
+                                    <div class="sensor-beam"></div>
+                                </div>
+                            </div>
+
+                            <div class="canvas-footer">
+                                <div class="controls-row">
+                                    <div class="control-group">
+                                        <label>Velocidad de Banda (%QW98 - Analógico): <span id="lbl-belt-speed">50</span>%</label>
+                                        <input type="range" min="10" max="100" value="50" class="slider" id="slider-belt-speed">
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Válvula de Llenado Dosificadora (%Q0.1 - Digital)</label>
+                                        <button class="btn btn-secondary" id="btn-manual-valve">Válvula MANUAL</button>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Modo de Funcionamiento</label>
+                                        <div class="toggle-switch">
+                                            <input type="checkbox" id="toggle-llenado-auto" checked>
+                                            <label for="toggle-llenado-auto">AUTO / MANUAL</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- I/O Table and Specifications -->
+                        <div class="simulator-sidebar">
+                            <div class="glass-card table-card">
+                                <h3>Direcciones de E/S PLC S7-1500</h3>
+                                <table class="io-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Dir. PLC</th>
+                                            <th>Símbolo</th>
+                                            <th>Estado</th>
+                                            <th>Descripción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>%I0.0</code></td>
+                                            <td>B102_Sensor_Botella</td>
+                                            <td><span class="led-indicator" id="io-in-llen-0"></span></td>
+                                            <td>Sensor óptico posición botella</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>%Q0.0</code></td>
+                                            <td>M101_Banda</td>
+                                            <td><span class="led-indicator" id="io-out-llen-0"></span></td>
+                                            <td>Activa motor de cinta transportadora</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>%Q0.1</code></td>
+                                            <td>Y101_Valvula_Llenado</td>
+                                            <td><span class="led-indicator" id="io-out-llen-1"></span></td>
+                                            <td>Válvula solenoide dosificadora</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>%IW96</code></td>
+                                            <td>Nivel_Tanque_Dosif</td>
+                                            <td><span class="analog-value-text" id="io-in-llen-ana">70%</span></td>
+                                            <td>Transmisor nivel tanque principal</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="glass-card spec-card">
+                                <h3>Ficha Técnica del Proceso</h3>
+                                <p><strong>Variable Controlada:</strong> Caudal y tiempo de dosificación por gravedad.</p>
+                                <p><strong>Actuadores:</strong> Motor trifásico de cinta transportadora controlado por variador, Válvula de respuesta rápida NC.</p>
+                                <p><strong>Lógica Secuencial:</strong> Cuando se detecta botella (%I0.0 = 1), se detiene la banda (%Q0.0 = 0), se abre la válvula (%Q0.1 = 1) durante 3 segundos, se cierra la válvula y se reanuda la banda.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FILTRACION SIMULATOR -->
+                <div id="filtracion-sim" class="sub-tab-content">
+                    <div class="simulator-layout">
+                        <!-- Main Interactive Area -->
+                        <div class="simulator-canvas glass-card">
+                            <div class="canvas-header">
+                                <h3>Estación de Filtración de Sólidos</h3>
+                                <div class="badge blue">Proceso Continuo</div>
+                            </div>
+                            
+                            <div class="filtracion-animation-area">
+                                <!-- Inflow pipe -->
+                                <div class="pipe inflow-pipe">
+                                    <div class="fluid-flow" id="inflow-fluid"></div>
+                                </div>
+                                <!-- Filtration Tank -->
+                                <div class="filter-tank">
+                                    <div class="tank-label font-xs">Tanque de Filtrado B101</div>
+                                    <div class="tank-fluid-fill" id="filter-tank-fill" style="height: 40%"></div>
+                                    <div class="filter-membrane">
+                                        <div class="membrane-grid"></div>
+                                    </div>
+                                    <div class="pressure-gauge-display" id="gauge-pressure">1.2 bar</div>
+                                </div>
+                                <!-- Feed Pump -->
+                                <div class="pump-symbol" id="feed-pump">
+                                    <div class="pump-impeller"></div>
+                                    <span class="label font-xs">Bomba Alimentación M101</span>
+                                </div>
+                                <!-- Output Pipe -->
+                                <div class="pipe outflow-pipe">
+                                    <div class="fluid-flow" id="outflow-fluid"></div>
+                                </div>
+                            </div>
+
+                            <div class="canvas-footer">
+                                <div class="controls-row">
+                                    <div class="control-group">
+                                        <label>Frecuencia de Bomba (%QW100 - Variador): <span id="lbl-pump-speed">40</span> Hz</label>
+                                        <input type="range" min="0" max="60" value="40" class="slider" id="slider-pump-speed">
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Nivel de Obstrucción del Filtro (Desgaste): <span id="lbl-clogging">10</span>%</label>
+                                        <input type="range" min="0" max="100" value="10" class="slider" id="slider-clogging">
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Válvula de Drenaje (%Q0.2)</label>
+                                        <button class="btn btn-secondary" id="btn-drain-valve">Abrir Drenaje</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- I/O Table and Specifications -->
+                        <div class="simulator-sidebar">
+                            <div class="glass-card table-card">
+                                <h3>Direcciones de E/S PLC S7-1500</h3>
+                                <table class="io-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Dir. PLC</th>
+                                            <th>Símbolo</th>
+                                            <th>Estado</th>
+                                            <th>Descripción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>%Q0.2</code></td>
+                                            <td>Y102_Valvula_Drenaje</td>
+                                            <td><span class="led-indicator" id="io-out-filt-2"></span></td>
+                                            <td>Apertura válvula de limpieza</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>%IW100</code></td>
+                                            <td>PT101_Presion_Filtro</td>
+                                            <td><span class="analog-value-text" id="io-in-filt-press">1.2 bar</span></td>
+                                            <td>Sensor analógico de presión (4-20mA)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>%IW102</code></td>
+                                            <td>LT101_Nivel_Filtro</td>
+                                            <td><span class="analog-value-text" id="io-in-filt-level">40%</span></td>
+                                            <td>Sensor analógico ultrasónico de nivel</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>%QW100</code></td>
+                                            <td>M101_Bomba_Freq</td>
+                                            <td><span class="analog-value-text" id="io-out-filt-pump">40Hz</span></td>
+                                            <td>Velocidad bomba (salida analógica 0-10V)</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="glass-card spec-card">
+                                <h3>Ficha Técnica del Proceso</h3>
+                                <p><strong>Medición Analógica:</strong> El sensor de presión envía una señal de 4-20 mA al módulo AI del PLC (escalado de 0 a 10 bar).</p>
+                                <p><strong>Lazo de Seguridad:</strong> Si el factor de obstrucción aumenta, la presión aumenta. Si la presión sobrepasa 3.0 bar, el PLC activa una alarma (%Q0.5) y apaga la bomba para proteger las membranas del filtro.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- REACTOR SIMULATOR -->
+                <div id="reactor-sim" class="sub-tab-content">
+                    <div class="simulator-layout">
+                        <!-- Main Interactive Area -->
+                        <div class="simulator-canvas glass-card">
+                            <div class="canvas-header">
+                                <h3>Reactor Químico Térmico B103</h3>
+                                <div class="badge orange">Lazo PID Activo</div>
+                            </div>
+                            
+                            <div class="reactor-animation-area">
+                                <!-- Reactor vessel -->
+                                <div class="reactor-vessel">
+                                    <div class="vessel-label font-xs">Reactor Químico</div>
+                                    <div class="reactor-fluid-fill" id="reactor-fluid" style="height: 60%"></div>
+                                    <!-- Heating element -->
+                                    <div class="heating-element" id="heater-coil"></div>
+                                    <!-- Temperature readout overlay -->
+                                    <div class="temp-readout" id="lbl-temp-display">55.0°C</div>
+                                </div>
+                                <!-- Heat glow effect -->
+                                <div class="heat-glow" id="heat-glow-panel"></div>
+                                <!-- Inflow valve -->
+                                <div class="valve-top">
+                                    <span class="label font-xs">Válvula Entrada</span>
+                                </div>
+                            </div>
+
+                            <div class="canvas-footer">
+                                <div class="controls-row">
+                                    <div class="control-group">
+                                        <label>Punto de Consigna (Setpoint PID): <span id="lbl-sp">60</span> °C</label>
+                                        <input type="range" min="20" max="100" value="60" class="slider" id="slider-sp">
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Potencia Manual Resistencia (%QW104): <span id="lbl-heat-power">0</span>%</label>
+                                        <input type="range" min="0" max="100" value="0" class="slider" id="slider-heat-power">
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Modo de Regulación</label>
+                                        <div class="toggle-switch">
+                                            <input type="checkbox" id="toggle-pid-mode" checked>
+                                            <label for="toggle-pid-mode">Lazo Cerrado PID / Manual</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- I/O Table and Specifications -->
+                        <div class="simulator-sidebar">
+                            <div class="glass-card table-card">
+                                <h3>Direcciones de E/S PLC S7-1500</h3>
+                                <table class="io-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Dir. PLC</th>
+                                            <th>Símbolo</th>
+                                            <th>Estado</th>
+                                            <th>Descripción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>%IW104</code></td>
+                                            <td>TT101_Temp_Reactor</td>
+                                            <td><span class="analog-value-text" id="io-in-react-temp">55.0°C</span></td>
+                                            <td>Sensor de temperatura RTD PT100</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>%QW104</code></td>
+                                            <td>W101_Resistencia_PWM</td>
+                                            <td><span class="analog-value-text" id="io-out-react-heat">0%</span></td>
+                                            <td>Señal analógica/PWM control de potencia</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>%Q0.3</code></td>
+                                            <td>Y103_Válvula_Enfriamiento</td>
+                                            <td><span class="led-indicator" id="io-out-react-3"></span></td>
+                                            <td>Válvula solenoide agua refrigeración</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>%I0.3</code></td>
+                                            <td>TS101_Termostato_Seguridad</td>
+                                            <td><span class="led-indicator" id="io-in-react-3"></span></td>
+                                            <td>Contacto digital seguridad sobretemperatura</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="glass-card spec-card">
+                                <h3>Ficha Técnica del Proceso</h3>
+                                <p><strong>Lazo PID (OB30):</strong> Ejecución en ciclo rápido de tiempo (ej. 100ms) utilizando el bloque <code>PID_Compact</code> de Siemens para estabilizar la temperatura.</p>
+                                <p><strong>Parámetros de Sintonía:</strong> Ajustados por método de Ziegler-Nichols (Kp, Ti, Td) para minimizar sobreimpulso y evitar evaporación súbita del refresco base.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MEZCLA SIMULATOR -->
+                <div id="mezcla-sim" class="sub-tab-content">
+                    <div class="simulator-layout">
+                        <!-- Main Interactive Area -->
+                        <div class="simulator-canvas glass-card">
+                            <div class="canvas-header">
+                                <h3>Estación de Mezclado de Jarabes</h3>
+                                <div class="badge green">Control Secuencial</div>
+                            </div>
+                            
+                            <div class="mezcla-animation-area">
+                                <!-- Liquid source A valve -->
+                                <div class="source-valve valve-left" id="valve-a">
+                                    <div class="valve-gate" id="gate-a"></div>
+                                    <span class="label font-xs">Válvula A (%Q0.0)</span>
+                                </div>
+                                <!-- Liquid source B valve -->
+                                <div class="source-valve valve-right" id="valve-b">
+                                    <div class="valve-gate" id="gate-b"></div>
+                                    <span class="label font-xs">Válvula B (%Q0.1)</span>
+                                </div>
+                                <!-- Mixing vessel -->
+                                <div class="mezcla-vessel">
+                                    <div class="fluid-layer fluid-a" id="fill-jarabe-a" style="height: 0%"></div>
+                                    <div class="fluid-layer fluid-b" id="fill-jarabe-b" style="height: 0%"></div>
+                                    <!-- Rotating stirrer blade -->
+                                    <div class="stirrer-shaft">
+                                        <div class="stirrer-blade" id="stirrer-blade"></div>
+                                    </div>
+                                    <div class="vessel-label font-xs">Tanque Mezclador B104</div>
+                                </div>
+                                <!-- Discharge valve -->
+                                <div class="discharge-pipe">
+                                    <div class="discharge-valve" id="discharge-val"></div>
+                                </div>
+                            </div>
+
+                            <div class="canvas-footer">
+                                <div class="controls-row">
+                                    <div class="control-group">
+                                        <label>Dosificar Jarabe A (%Q0.0)</label>
+                                        <button class="btn btn-secondary" id="btn-dose-a">Abrir Válvula A</button>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Dosificar Jarabe B (%Q0.1)</label>
+                                        <button class="btn btn-secondary" id="btn-dose-b">Abrir Válvula B</button>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Velocidad Motor Agitador (%QW106): <span id="lbl-stir-speed">0</span> RPM</label>
+                                        <input type="range" min="0" max="1500" value="0" class="slider" id="slider-stir-speed">
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Descargar Mezcla (%Q0.3)</label>
+                                        <button class="btn btn-secondary" id="btn-dose-out">Descargar Jarabe</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- I/O Table and Specifications -->
+                        <div class="simulator-sidebar">
+                            <div class="glass-card table-card">
+                                <h3>Direcciones de E/S PLC S7-1500</h3>
+                                <table class="io-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Dir. PLC</th>
+                                            <th>Símbolo</th>
+                                            <th>Estado</th>
+                                            <th>Descripción</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><code>%Q0.0</code></td>
+                                            <td>Y104_Valvula_Jarabe_A</td>
+                                            <td><span class="led-indicator" id="io-out-mez-0"></span></td>
+                                            <td>Dosifica Jarabe base concentrado</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>%Q0.1</code></td>
+                                            <td>Y105_Valvula_Jarabe_B</td>
+                                            <td><span class="led-indicator" id="io-out-mez-1"></span></td>
+                                            <td>Dosifica agua desmineralizada</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>%Q0.3</code></td>
+                                            <td>Y106_Valvula_Descarga</td>
+                                            <td><span class="led-indicator" id="io-out-mez-3"></span></td>
+                                            <td>Válvula descarga tanque de mezcla</td>
+                                        </tr>
+                                        <tr>
+                                            <td><code>%QW106</code></td>
+                                            <td>M102_Agitador_RPM</td>
+                                            <td><span class="analog-value-text" id="io-out-mez-rpm">0 RPM</span></td>
+                                            <td>Control motor mezclador por bus de campo</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="glass-card spec-card">
+                                <h3>Ficha Técnica del Proceso</h3>
+                                <p><strong>Dosificación Secuencial:</strong> Se alimenta el reactor con jarabe A hasta alcanzar el 30% del volumen, luego jarabe B hasta el 80%.</p>
+                                <p><strong>Control de Homogeneidad:</strong> El motor de agitación (%QW106) se activa a 800 RPM por 10 segundos antes de habilitar la descarga total (%Q0.3) al tanque de llenado.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. QUIZ SECTION -->
+            <section id="quiz-section" class="content-section">
+                <div class="quiz-container">
+                    <div class="quiz-welcome glass-card" id="quiz-intro-panel">
+                        <div class="quiz-badge">Evaluación de Saberes</div>
+                        <h2>Autoevaluación de Servosistemas y PLCs</h2>
+                        <p>Pon a prueba tus conocimientos sobre hardware S7-1500, direccionamiento de señales, modelado con GRAFCET, modos de operación GEMMA y regulación PID.</p>
+                        
+                        <div class="quiz-details">
+                            <div class="quiz-detail-item">
+                                <strong>10</strong>
+                                <span>Preguntas</span>
+                            </div>
+                            <div class="quiz-detail-item">
+                                <strong>80%</strong>
+                                <span>Min. Para Aprobar</span>
+                            </div>
+                            <div class="quiz-detail-item">
+                                <strong>Inmediata</strong>
+                                <span>Retroalimentación</span>
+                            </div>
+                        </div>
+
+                        <button class="btn btn-primary btn-large" id="btn-start-quiz">Iniciar Cuestionario</button>
+                    </div>
+
+                    <!-- Interactive Quiz Panel -->
+                    <div class="quiz-play-panel glass-card" id="quiz-play-panel" style="display: none;">
+                        <div class="quiz-progress-bar">
+                            <div class="progress-fill" id="quiz-progress-fill" style="width: 10%"></div>
+                        </div>
+                        <div class="quiz-header">
+                            <span class="question-number" id="lbl-question-number">Pregunta 1 de 10</span>
+                            <span class="quiz-score" id="lbl-quiz-current-score">Puntaje: 0</span>
+                        </div>
+                        
+                        <div class="quiz-body">
+                            <h3 class="question-text" id="quiz-question-text">¿Cuál es el modelo de CPU del PLC Siemens utilizado en las plantas didácticas FACT del CEAI?</h3>
+                            
+                            <div class="quiz-options" id="quiz-options-container">
+                                <!-- Loaded dynamically via JS -->
+                                <button class="option-btn">CPU 1214C AC/DC/Rly</button>
+                                <button class="option-btn">CPU 1516-3 PN/DP</button>
+                                <button class="option-btn">CPU 315-2 DP</button>
+                                <button class="option-btn">CPU 1511-1 PN</button>
+                            </div>
+                        </div>
+
+                        <div class="quiz-explanation-box glass-card" id="quiz-explanation" style="display: none;">
+                            <h4 id="quiz-feedback-title">¡Correcto!</h4>
+                            <p id="quiz-feedback-text">La CPU de gama alta S7-1516-3 PN/DP es el núcleo del control del proceso unitario.</p>
+                            <button class="btn btn-primary" id="btn-next-question">Siguiente Pregunta</button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Results Panel -->
+                    <div class="quiz-results-panel glass-card" id="quiz-results-panel" style="display: none;">
+                        <div class="results-icon" id="quiz-results-icon">🏆</div>
+                        <h2 id="quiz-results-title">¡Felicitaciones, Aprobaste!</h2>
+                        <p class="results-score" id="quiz-results-score">Tu puntaje fue de: 90% (9 de 10 respuestas correctas)</p>
+                        <p id="quiz-results-feedback">Has demostrado un excelente dominio de las guías de taller y fundamentos de automatización industrial del CEAI.</p>
+                        
+                        <div class="results-actions">
+                            <button class="btn btn-primary" id="btn-retry-quiz">Repetir Cuestionario</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modals or Popups if needed -->
+    <script src="quiz.js"></script>
+    <script src="simulators.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
